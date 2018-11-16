@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ProductDetail from './views/ProductDetail.vue'
 import Basket from './views/Basket.vue'
-
+import AddressField from './views/Address.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +24,10 @@ export default new Router({
       path: '/basket',
       name: 'basket',
       component: Basket
+    },{
+      path: '/addressField',
+      name: 'addressField',
+      component: AddressField
     },
     {
       path: '/about',

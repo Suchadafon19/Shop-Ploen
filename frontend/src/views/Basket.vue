@@ -47,12 +47,12 @@
 <br>
 <div class="container">
   <center>
-  	<a href="product.html">
+  	<router-link to="/">
   		<button type="button" class="btn btn-primary btn-block" id="basket1" >เพิ่มสินค้า</button>
-  	</a>
-  	<a href="address.html">
+  	</router-link>
+  	<router-link to="/addressField">
   		<button type="button" class="btn btn-default btn-block" id="basket2">ยืนยันการสั่งซื้อ</button>
-  	</a>
+  	</router-link>
   </center>
 </div>
 
