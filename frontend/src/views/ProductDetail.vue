@@ -49,7 +49,7 @@
 
 				            <br>
 				        <center>    
-				            <a id="addProduct" href="basket.html">เพิ่มสินค้าลงตระกร้า</a>
+				            <router-link to="/basket">เพิ่มสินค้าลงตระกร้า</router-link>
 						</center>
 
 			       		</td>  

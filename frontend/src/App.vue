@@ -13,7 +13,7 @@
 
           
 
-          <li><a href="basket.html">ตะกร้าสินค้า</a></li>
+          <li><router-link to="/basket">ตะกร้าสินค้า</router-link></li>
           <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
