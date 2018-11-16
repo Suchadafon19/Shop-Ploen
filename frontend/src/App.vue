@@ -9,7 +9,10 @@
           <a class="navbar-brand" href="#">Shoppearn</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="product.html">หน้าหลัก</a></li>
+          <li class="Home"><router-link to="/">Home</router-link> </li>
+
+          
+
           <li><a href="basket.html">ตะกร้าสินค้า</a></li>
           <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
         </ul>
@@ -18,6 +21,7 @@
         </ul>
       </div>
     </nav>
+
     <div id="foot">
   <footer class="bg3 p-t-75 p-b-32">
     <div class="container">
@@ -107,14 +111,15 @@
   
   </div>
     </footer>
+    
       </div>
-      
-  </div>
-    <!-- <div id="nav">
+      <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <!-- <router-view/> -->
+    <router-view/> 
+  </div>
+    
   
 </template>
 
