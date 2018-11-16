@@ -123,12 +123,13 @@
           <br>
     	<center>
     		<a href="basket.html">
+				
 				<button class="button1" style="vertical-align:middle"><span>ยกเลิก </span></button>
 			</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    		<a href="payment.html">
-    			<button class="button2" style="vertical-align:middle"><span>ยืนยันที่อยู่ </span></button>
-			</a>
+    	
+				<router-link to="/payment"><button class="button2" style="vertical-align:middle"><span>ยืนยันที่อยู่ </span></button></router-link>	
+		
 		</center><br>
 
     </div>
