@@ -2,9 +2,11 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+
+
     <div class='container' style="background-color: black; width:100%">
   <div class='product' style="height: 330px">
-    <a href="productDetail.html"><img src="" style="width: 118%; height: 63%" /></a>
+    <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" /></router-link>
     <h2 class='header'>amazing grace</h2>
     <p class='price'>1,900.00 บาท</p>
     <div class='btn'><a href="basket.html">Add to cart</a></div>
