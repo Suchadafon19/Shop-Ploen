@@ -22,6 +22,8 @@
       </div>
     </nav>
 
+<router-view/>
+
     <div id="foot">
   <footer class="bg3 p-t-75 p-b-32">
     <div class="container">
@@ -117,7 +119,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <router-view/> 
+     
   </div>
     
   
