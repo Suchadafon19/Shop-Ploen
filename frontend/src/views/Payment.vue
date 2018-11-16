@@ -33,14 +33,14 @@
 	</div>
     	<br>
     	<center>
-    		<a href="address.html">
+
                 <router-link to="/addressField"><button class="button1" style="vertical-align:middle"><span>ย้อนกลับ </span></button></router-link>
 				
-			</a>
+
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    		<a href="payment2.html">
-    			<button class="button2" style="vertical-align:middle"><span>ยืนยันการชำระเงิน </span></button>
-			</a>
+
+    			<router-link to="/paymentSuccess"><button class="button2" style="vertical-align:middle"><span>ยืนยันการชำระเงิน </span></button></router-link>
+
 		</center><br>
 </section><br>
     </div>

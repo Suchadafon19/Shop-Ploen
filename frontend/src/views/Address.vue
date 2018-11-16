@@ -2,7 +2,7 @@
     <div class="addressField">
         <section> 
 	        <h2 align="center">ข้อมูลการจัดส่งสินค้า</h2><br>
-        </section>
+        
         <h3>ชื่อ/นามสกุล :</h3>
         <input type="text" name="fullName" v-model="fullname"><br>
 
@@ -131,7 +131,7 @@
 				<router-link to="/payment"><button class="button2" style="vertical-align:middle"><span>ยืนยันที่อยู่ </span></button></router-link>	
 		
 		</center><br>
-
+</section>
     </div>
 </template>
 <style>

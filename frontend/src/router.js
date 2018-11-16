@@ -5,6 +5,7 @@ import ProductDetail from './views/ProductDetail.vue'
 import Basket from './views/Basket.vue'
 import AddressField from './views/Address.vue'
 import Payment from './views/Payment.vue'
+import PaymentSuccess from './views/PaymentSuccess.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/payment',
       name: 'payment',
       component: Payment
+    },
+    {
+      path: '/paymentSuccess',
+      name: 'paymentSuccess',
+      component: PaymentSuccess
     },
     {
       path: '/about',
