@@ -2,75 +2,40 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-
-
     <div class='container' style="background-color: black; width:100%">
-  <div class='product' style="height: 330px">
-    <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" /></router-link>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'><a href="basket.html">Add to cart</a></div>
-  </div>
-  <div class='product' style="height: 330px">
-    <a href="des2.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div>
-  <div class='product' style="height: 330px">
-    <a href="des3.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div>
-  <div class='product' style="height: 330px">
-    <a href="des4.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div><div class='product' style="height: 330px">
-    <a href="des5.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>580.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div><div class='product' style="height: 330px">
-    <a href="des6.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div><div class='product' style="height: 330px">
-    <a href="des7.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div><div class='product' style="height: 330px">
-    <a href="des8.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div><div class='product' style="height: 330px">
-    <a href="des9.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div><div class='product' style="height: 330px">
-    <a href="des10.html"><img src="" style="width: 118%; height: 63%" /></a>
-    <h2 class='header'>amazing grace</h2>
-    <p class='price'>1,900.00 บาท</p>
-    <div class='btn'>Add to cart</div>
-  </div>
-</div>
+      <div class='product' style="height: 330px" v-for="item in product" :key="item.productNo">
+        <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" /></router-link>
+        <h2 class='header'>{{ item.productName }}</h2>
+        <p class='price'>{{item.price}} ฿</p>
+        <div class='btn'><h7>add to cart</h7></div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
+import axios from 'axios'
 export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  data () {
+    return {
+      product: ''
+    }
+  },
+  methods: {
+    getProduct: async function () {
+      let product = await axios.get('http://localhost:8081/getAllProduct')
+      this.product = product.data
+      console.log(this.product)
+    }
+  },
+  mounted () {
+    this.getProduct()
   }
 }
 </script>
