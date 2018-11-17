@@ -60,7 +60,7 @@ public class Product implements Serializable {
         this.amount = amount;
     }
 
-    public int getProductDetail() {
+    public String getProductDetail() {
         return productDetail;
     }
 
