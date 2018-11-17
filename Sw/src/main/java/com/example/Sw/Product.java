@@ -21,6 +21,8 @@ public class Product implements Serializable {
     private double price;
     @Column(name = "amount")
     private int amount;
+    @Column(name = "productDetail")
+    private int productDetail;
 
     public Product() {
         super();
@@ -56,5 +58,13 @@ public class Product implements Serializable {
 
     public void setAmount(int amount) {
         this.amount = amount;
-    }   
+    }
+
+    public int getProductDetail() {
+        return productDetail;
+    }
+
+    public void setProductDetail(int productDetail) {
+        this.productDetail = productDetail;
+    }
 }
