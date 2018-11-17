@@ -17,7 +17,7 @@
           <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> เข้าสู่ระบบ</a></li>
+          <li><router-link to="/login"><span class="glyphicon glyphicon-log-in"></span> เข้าสู่ระบบ</router></li>
         </ul>
       </div>
     </nav>
