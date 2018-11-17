@@ -22,7 +22,7 @@ public class Product implements Serializable {
     @Column(name = "amount")
     private int amount;
     @Column(name = "productDetail")
-    private int productDetail;
+    private String productDetail;
 
     public Product() {
         super();
@@ -60,11 +60,11 @@ public class Product implements Serializable {
         this.amount = amount;
     }
 
-    public int getProductDetail() {
+    public String getProductDetail() {
         return productDetail;
     }
 
-    public void setProductDetail(int productDetail) {
+    public void setProductDetail(String productDetail) {
         this.productDetail = productDetail;
     }
 }
