@@ -7,7 +7,9 @@ export default new Vuex.Store({
   state: {
     viewProductNo: 0,
     cart: [],
-    cartCount: 0
+    cartCount: 0,
+    totalPrice: 0
+    
   },
   mutations: {
     viewProductDetail(state, productNo){
@@ -26,7 +28,11 @@ export default new Vuex.Store({
           Vue.set(item, 'totalPrice', item.price);
       }
       state.cartCount++;
-  }
+    },
+    keepTotalPrice(state, total){
+      state.totalPrice = total
+      console.log('total'+total)
+    }
   },
   actions: {
 

@@ -21,13 +21,14 @@
     	<label><b>CCV/CW</b></label>
     	<input type="password" placeholder="CCV" name="ccv" required="" id="pay_ccv"><br><br>
 
-    	<label><b>จำนวนเงิน</b></label> <input type=text name=user style="border: none" id="pay1">&nbsp;บาท
+    	<label><b>จำนวนเงิน</b></label>&nbsp;{{$store.state.totalPrice}}&nbsp;บาท
+	
     	<br><br>
 
-    	<label><b>ค่าจัดส่ง</b></label> <input type=text name=user style="border: none" id="pay2">&nbsp;บาท
+    	<label><b>ค่าจัดส่ง</b></label>&nbsp;50&nbsp;บาท
     	<br><br>
 
-    	<label><b>รวม</b></label> <input type=text name=user style="border: none" id="pay3">&nbsp;<b>บาท</b>
+    	<label><b>รวม</b></label>&nbsp;{{priceNet}}&nbsp;<b>บาท</b>
     	<br><br>
 	
 	</div>
@@ -45,6 +46,27 @@
 </section><br>
     </div>
 </template>
+
+<script>
+	export default {
+    data () {
+        return {
+			
+			transportFee: 50,
+			priceNet: 0
+        }
+    },
+    methods: {
+		totalpricePlusTransportFee(){
+			this.priceNet = this.transportFee + this.$store.state.totalPrice
+		}
+	},
+    mounted () {
+        this.totalpricePlusTransportFee()
+    }
+	}
+</script>
+
 <style>
 #pay_num {
 	width: 400px;

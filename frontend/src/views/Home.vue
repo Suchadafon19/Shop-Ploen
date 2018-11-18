@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getProduct: async function () {
-      let product = await axios.get('http://localhost:8081/getAllProduct')
+      let product = await axios.get('http://localhost:5000/getAllProduct')
       this.product = product.data
       console.log(this.product)
     },

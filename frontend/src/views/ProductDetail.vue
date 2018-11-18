@@ -73,9 +73,8 @@ export default {
   methods: {
     getProduct: async function () {
 			console.log('no'+this.$store.state.viewProductNo)
-			let url = 'http://localhost:8081/'+this.$store.state.viewProductNo
-			console.log('product no url: '+'http://localhost:8081/'+this.$store.state.viewProductNo)
-      let product = await axios.get('http://localhost:8081/'+this.$store.state.viewProductNo)
+			console.log('product no url: '+'http://shop-ploen.ap-southeast-1.elasticbeanstalk.com/'+this.$store.state.viewProductNo)
+      let product = await axios.get('http://shop-ploen.ap-southeast-1.elasticbeanstalk.com/'+this.$store.state.viewProductNo)
       this.product = product.data
       console.log(this.product)
 		},

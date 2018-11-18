@@ -134,6 +134,28 @@
 </section>
     </div>
 </template>
+
+
+<script>
+	export default {
+  	data () {
+    return {
+	  fullname: '',
+	  phoneNumber: '',
+	  email: '',
+	  village: '',
+	  houseno: '',
+	  moo: '',
+	  soi: '',
+		phoneNumber: '',
+		district: '',
+	  postcode: '',
+	  amphur: ''
+		}  
+	  }
+	}
+</script>
+
 <style>
 
 </style>

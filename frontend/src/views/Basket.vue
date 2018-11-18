@@ -43,7 +43,7 @@
 </div>
 
 <div class="container">
-	<h3>ราคารวมทั้งหมด : บาท</h3>  
+	<h3>ราคารวมทั้งหมด : {{total}} บาท</h3>  
 </div>
 
 <br>
@@ -61,6 +61,28 @@
 <br><br><br>
 </div>
 </template>
+
+<script>
+	export default {
+    data () {
+        return {
+            total: 0,
+            test: ''
+        }
+    },
+    methods: {
+        totalPrice: function () {
+					for (let item of this.$store.state.cart) {
+                this.total += item.totalPrice;
+					}	
+					this.$store.commit('keepTotalPrice', this.total);
+				}
+		},
+    mounted () {
+        this.totalPrice()
+    }
+	}
+</script>
 
   <style type="text/css">
 #foot{
