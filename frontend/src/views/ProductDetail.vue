@@ -9,11 +9,11 @@
 							<img src="" style="width: 400px;height: 500px">
 			          	</td>
 			       		<td id="detail" style="padding: 30px">
-				       		<h1>TIME QUARTZ</h1>
+				       		<h1>{{product.productName}}</h1>
 				       		<hr>
-				            <h3>$ 26.00</h3>
+				            <h3>{{product.price}}</h3>
 				            <span>
-				            	นาฬิกา TIME QUARTZ ในระบบควอทซ์ที่สามารถป้องกันแรงดันจากน้ำได้ลึกถึง 20 บาร์ ปุ่มจับเวลาทั้ง 3 และลุคสปอร์ตทำให้นาฬิการุ่นนี้เป็นเครื่องมือดำน้ำที่สมบูรณ์แบบ
+				            	{{product.productDetail}}
 				            </span>
 
 				            <br>
@@ -59,9 +59,31 @@
 			</center>
 		</div>
         </div>
-
-
 </template>
+
+<script>
+import axios from 'axios'
+export default {
+  data () {
+    return {
+      product: ''
+    }
+  },
+  methods: {
+    getProduct: async function () {
+			console.log('no'+this.$store.state.viewProductNo)
+			let url = 'http://localhost:8081/'+this.$store.state.viewProductNo
+			console.log('product no url: '+'http://localhost:8081/'+this.$store.state.viewProductNo)
+      let product = await axios.get('http://localhost:8081/'+this.$store.state.viewProductNo)
+      this.product = product.data
+      console.log(this.product)
+    }
+  },
+  mounted () {
+    this.getProduct()
+  }
+}
+</script>
 
 <style type="text/css">
   	#foot{

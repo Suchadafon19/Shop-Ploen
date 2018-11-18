@@ -4,10 +4,10 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div class='container' style="background-color: black; width:100%">
       <div class='product' style="height: 330px" v-for="item in product" :key="item.productNo">
-        <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" /></router-link>
+        <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" @click="viewProductDetail(item.productNo)"/></router-link>
         <h2 class='header'>{{ item.productName }}</h2>
         <p class='price'>{{item.price}} ฿</p>
-        <div class='btn'><h7>add to cart</h7></div>
+        <div class='btn'><p>add to cart</p></div>
       </div>
     </div>
   </div>
@@ -32,6 +32,9 @@ export default {
       let product = await axios.get('http://localhost:8081/getAllProduct')
       this.product = product.data
       console.log(this.product)
+    },
+    viewProductDetail(productNo) {
+      this.$store.commit('viewProductDetail', productNo);
     }
   },
   mounted () {
