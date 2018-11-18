@@ -7,7 +7,7 @@
         <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" @click="viewProductDetail(item.productNo)"/></router-link>
         <h2 class='header'>{{ item.productName }}</h2>
         <p class='price'>{{item.price}} ฿</p>
-        <div class='btn'><p>add to cart</p></div>
+        <div class='btn'><p @click="addToCart(item)">add to cart</p></div>
       </div>
     </div>
   </div>
@@ -35,6 +35,9 @@ export default {
     },
     viewProductDetail(productNo) {
       this.$store.commit('viewProductDetail', productNo);
+    },
+    addToCart(item) {
+        this.$store.commit('addToCart', item);
     }
   },
   mounted () {

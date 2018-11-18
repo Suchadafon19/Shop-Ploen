@@ -10,7 +10,7 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="Home"><router-link to="/">Home</router-link> </li>
-          <li><router-link to="/basket">ตะกร้าสินค้า</router-link></li>
+          <li><router-link to="/basket">ตะกร้าสินค้า ({{ $store.state.cartCount }})</router-link></li>
           <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

@@ -1,8 +1,11 @@
 <template>
 <div class="basket">
 <div class="container">
-  	<h2>ตะกร้าสินค้า</h2>           
-  			<table class="table table-striped">
+  	<h2>ตะกร้าสินค้า</h2> 
+		<div v-if="$store.state.cart.length > 0">          
+  				
+				<table class="table table-striped">
+
     			<thead>
       				<tr>
       					<th></th>
@@ -12,36 +15,35 @@
         				<th>ราคารวม</th>
       				</tr>
     			</thead>
-    			<tbody>
+    		
+  			</table>
+				<div v-for="item in $store.state.cart"
+                :key="item.productNo">
+				<table class="table table-striped">
+						<tbody>
+					
       				<tr>
       					<td class="column-1">
 							<div class="how-itemcart1">
 								<img src="" alt="">
 							</div>
 						</td>
-        				<td>Fresh Strawberries</td>
-        				<td>$ 36.00</td>
-        				<td>1</td>
-        				<td>$ 36.00</td>
+        				<td>{{item.productName}}</td>
+        				<td>{{item.price}} บาท</td>
+        				<td>{{item.quantity}}</td>
+        				<td>{{item.totalPrice}}บาท</td>
       				</tr>
-      				<tr>
-        				<td class="column-1">
-							<div class="how-itemcart1">
-								<img src="" alt="">
-							</div>
-						</td>
-        				<td>Lightweight Jacket</td>
-        				<td>$ 16.00</td>
-        				<td>2</td>
-        				<td>$ 32.00</td>
-      				</tr>
+						
       				
     			</tbody>
-  			</table>
+				</table>
+				</div>
+				</div>
+		
 </div>
 
 <div class="container">
-	<h3>ราคารวมทั้งหมด : $ 68.00</h3>  
+	<h3>ราคารวมทั้งหมด : บาท</h3>  
 </div>
 
 <br>

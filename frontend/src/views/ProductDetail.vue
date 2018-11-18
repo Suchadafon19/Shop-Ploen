@@ -15,6 +15,7 @@
 				            <span>
 				            	{{product.productDetail}}
 				            </span>
+									
 
 				            <br>
 
@@ -46,10 +47,10 @@
 				                <option value="color">gray</option>
 				              </select>
 				            </h3>
-
+											<router-link to="/basket"><p @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</p></router-link>
 				            <br>
 				        <center>    
-				            <router-link to="/basket">เพิ่มสินค้าลงตระกร้า</router-link>
+				            
 						</center>
 
 			       		</td>  
@@ -77,6 +78,9 @@ export default {
       let product = await axios.get('http://localhost:8081/'+this.$store.state.viewProductNo)
       this.product = product.data
       console.log(this.product)
+		},
+		addToCart(item) {
+        this.$store.commit('addToCart', item);
     }
   },
   mounted () {
