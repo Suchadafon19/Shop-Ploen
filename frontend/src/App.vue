@@ -3,32 +3,29 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="product.css">
-    <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Shoppearn</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="Home"><router-link to="/">Home</router-link> </li>
-
-          
-
           <li><router-link to="/basket">ตะกร้าสินค้า</router-link></li>
           <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><router-link to="/login"><span class="glyphicon glyphicon-log-in"></span> เข้าสู่ระบบ</router></li>
+          <li><router-link to="/login"><span class="glyphicon glyphicon-log-in"></span>เข้าสู่ระบบ</router-link></li>
         </ul>
       </div>
     </nav>
 
-<router-view/>
+    <router-view/>
 
     <div id="foot">
-  <footer class="bg3 p-t-75 p-b-32">
-    <div class="container">
-      <div class="row">
-       <div class="col-sm-6 col-lg-3 p-b-50">
+      <footer class="bg3 p-t-75 p-b-32">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-lg-3 p-b-50">
           <h4 class="stext-301 cl0 p-b-30">
             ศูนย์ช่วยเหลือ
           </h4>
@@ -58,8 +55,8 @@
               </a>
             </li>
           </ul>
-        </div>
-        <div class="col-sm-6 col-lg-3 p-b-50">
+          </div>
+          <div class="col-sm-6 col-lg-3 p-b-50">
           <h4 class="stext-301 cl0 p-b-30">
             เกี่ยวกับเรา
           </h4>
@@ -84,8 +81,8 @@
             </li>
 
             
-          </ul>
-        </div>
+           </ul>
+           </div>
         <div class="col-sm-6 col-lg-3 p-b-50">
           <h4 class="stext-301 cl0 p-b-30">
             วิธีการชำระเงิน
@@ -111,17 +108,15 @@
             Shoppearn โดยสมาคมแม่บ้าน</center></h5>
       </div>
   
-  </div>
+    </div>
     </footer>
     
-      </div>
+  </div>
       <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div> -->
-     
-  </div>
-    
+    </div> -->     
+</div>   
   
 </template>
 

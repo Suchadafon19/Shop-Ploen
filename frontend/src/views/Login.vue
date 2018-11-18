@@ -1,5 +1,5 @@
 <template>
- <div class="login">
+  <div class="login">
 	<!-- Login -->
 	  <div class="banner-top">
 	    <div class="containers">
@@ -7,13 +7,14 @@
 	    </div>
 	  </div>
 
+    <div class="logins">
     <div class="main">
         <div class="form-w3agile">
           <h3>Login</h3>
           <form action="#" method="post">
             <div class="key">
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              <input  type="text" value="username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+              <input  type="text" value="username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" required="">
               <div class="clearfix"></div>
             </div>
             <div class="key">
@@ -27,7 +28,7 @@
             <p><button><a href="product.html">Login</a></button></p>
             </div>
             <div class="face">
-              <img src="images/face.png" alt="">
+              <img src="../assets/face.png" alt="">
               <a href="https://www.facebook.com/">Facebook</a>
             </div>
           </form>
@@ -36,6 +37,7 @@
         <div class="clearfix"></div>
         </div>
       </div>
+ </div>    
 
 </template>
 
@@ -47,11 +49,8 @@
     h4{
       color: white;
     }
-
-    h5{
-      color: white;
-    }
-    @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
+    
+    /*@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);*/
     * {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -76,7 +75,6 @@
         margin-top: auto;
         margin-bottom: auto;
     }
-
     
     .container {
         width: 750px;
@@ -96,12 +94,12 @@
         margin-left: auto;
     }
 
-    @media (max-width: 991px)
-    .login {
+    /*@media (max-width: 991px)*/
+    .logins {
       padding: 4em 0;
     }
 
-    @media (max-width: 991px)
+    /*@media (max-width: 991px)*/
     .main{
     width: 65%;
     }
@@ -113,8 +111,6 @@
       background: white;
       margin-top: 2em;
       margin-bottom: 2em;
-
-
     }
 
     .form-w3agile h3 {
@@ -122,7 +118,6 @@
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 1em;
-
     }
 
     .key {
@@ -159,21 +154,21 @@
     font-size: 1.15em;
     outline: none;
     height: 1.25cm;
-    width: 8.5cm;
+    width: 8cm;
     cursor: pointer;
-    margin-bottom: 25px;
+    margin-bottom: 23px;
     }
     
     .face{
     background: #192152 ;
     padding: 10px 10px;
     border: none;
+    text-align: center;
     outline: none;
     height: 1.25cm;
-    width: 8.5cm;
+    width: 8cm;
     cursor: pointer;
     margin-bottom: 25px; 
-    text-align: center;
     }
 
     .face img{
