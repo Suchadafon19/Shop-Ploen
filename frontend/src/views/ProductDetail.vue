@@ -5,7 +5,7 @@
 			<center>
 				<table style="width: 80%">
 			        <tr>
-			          	<td>
+			          	<td id="td1">
 							<img :src="product.productPic" style="width: 400px;height: 500px">
 			          	</td>
 			       		<td id="detail" style="padding: 30px">
@@ -20,7 +20,7 @@
 				            <br>
 
 				            
-											<center><router-link to="/basket"><p @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</p></router-link></center>
+											<center><router-link to="/basket"><button type="button" id="addProduct" @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</button></router-link></center>
 				            <br>
 				        <center>    
 				            
@@ -72,12 +72,17 @@ export default {
 		background-color:rgba(141, 119, 83, 0.69);
 	}
 	#addProduct{
-	color: black;
+	background-color:rgba(141, 119, 83, 0.69);
+	color: rgb(44, 29, 19);
 	margin:10px;
 	border:1px;
 	border-radius:20px;
 	padding:10px;
 	border:solid;
 	}
-	
+	#td1{
+		padding: 20px;
+		padding-left: 110px;
+		background-color:lightgoldenrodyellow;
+	}
   </style>		
