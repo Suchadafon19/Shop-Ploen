@@ -7,6 +7,7 @@ import AddressField from './views/Address.vue'
 import Payment from './views/Payment.vue'
 import PaymentSuccess from './views/PaymentSuccess.vue'
 import Login from './views/Login.vue'
+//import About from './views/about.vue'
 
 Vue.use(Router)
 

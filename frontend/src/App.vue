@@ -64,19 +64,19 @@
 
           <ul>
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/about" class="stext-107 cl7 hov-cl1 trans-04">
                 ติดต่อเรา
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/about" class="stext-107 cl7 hov-cl1 trans-04">
                 นโยบายของเรา 
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/about" class="stext-107 cl7 hov-cl1 trans-04">
                 นโยบายความเป็นส่วนตัว
               </a>
             </li>
