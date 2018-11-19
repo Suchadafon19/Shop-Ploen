@@ -6,7 +6,7 @@
       <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Shoppearn</a>
+          <a class="navbar-brand" href="#">Shopploen</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="Home"><router-link to="/">Home</router-link> </li>
