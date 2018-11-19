@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <div class='container' style="background-color: black; width:100%">
+    <div class='container' style="background-color: black; width:100%; padding-left:110px">
       <div class='product' style="height: 330px" v-for="item in product" :key="item.productNo">
         <router-link to="/productDetail">
           <img :src="item.productPic" alt="productPicture" style="width: 118%; height: 63%" @click="viewProductDetail(item.productNo)"/>
