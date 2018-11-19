@@ -1,5 +1,7 @@
 package com.example.Sw;
 
+import java.util.Date;
+
 // import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +19,8 @@ public class OrderList {
     private Long orderNo;
     @Column(name = "totalPrice")
     private double totalPrice;
-    // @Column(name = "date")
-    // private Date date;
+    @Column(name = "date")
+    private Date date;
     @Column(name = "userNo")
     private Long userNo;
 
@@ -41,13 +43,13 @@ public class OrderList {
         this.totalPrice = totalPrice;
     }
 
-    // public Date getDate() {
-    //     return date;
-    // }
+    public Date getDate() {
+        return date;
+    }
 
-    // public void setDate(Date date) {
-    //     this.date = date;
-    // }
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public Long getUserNo() {
         return userNo;
