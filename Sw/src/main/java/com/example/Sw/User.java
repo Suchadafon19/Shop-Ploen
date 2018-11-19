@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 @Entity
 @Table(name = "User")
 public class User {
@@ -44,7 +46,7 @@ public class User {
     @NotBlank
     @Column(name = "postcode")
     private int postcode;
-    @NotBlank
+    @UniqueElements
     @Column(name = "username")
     private String username;
     @NotBlank

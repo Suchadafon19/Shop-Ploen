@@ -3,19 +3,28 @@
         <section> 
 	        <h2 align="center">ข้อมูลการจัดส่งสินค้า</h2><br>
         
-        <h3>ชื่อ/นามสกุล :</h3>
-        <input type="text" name="fullName" v-model="fullname"><br>
+        <label><h3>ชื่อ-นามสกุล : </h3></label><h4>{{$store.state.user.fName}} {{$store.state.user.lName}}</h4> <br>
+        <!-- <input type="text" name="fullName" v-model="fullname"><br> -->
 
-        <h3>เบอร์โทรศัพท์ :</h3>
-        <input type="text" name="phoneNumber" v-model="phoneNumber"><br>
+        <label><h3>เบอร์โทรศัพท์ : </h3></label><h4>{{$store.state.user.telNo}}</h4> <br> 
+        <!-- <input type="text" name="phoneNumber" v-model="phoneNumber"><br> -->
 
-        <h3>E-mail :</h3>
-        <input type="text" name="email" v-model="email"><br>
+        <label><h3>E-mail :</h3></label><h4>{{$store.state.user.email}}</h4> <br>
+        <!-- <input type="text" name="email" v-model="email"><br> -->
 
-        <h3>ชื่อหมู่บ้าน/อาคาร :</h3>
+		 <label><h3>ที่อยู่จัดส่ง :</h3></label>
+		 <h4>บ้านเลขที่ {{$store.state.user.addressNo}} 
+		 ซอย {{$store.state.user.soi}} 
+		 ถนน {{$store.state.user.road}}</h4><br>
+		 <h4>เเขวง  {{$store.state.user.subDistrict}}
+		 เขต  {{$store.state.user.district}}
+		 จังหวัด  {{$store.state.user.province}}
+		 รหัสไปรษณีย์  {{$store.state.user.postcode}}</h4>
+		
+        <!-- <h3>ชื่อหมู่บ้าน/อาคาร :</h3></label>{{$store.state.user.email}} 
         <input type="text" name="village" v-model="village"><br>
 
-        <h3>บ้านเลขที่ :</h3>
+        <h3>บ้านเลขที่ :</h3></label>{{$store.state.user.email}} 
         <input type="text" name="houseno" v-model="houseno"><br>
 
         <h3>หมู่ที่ :</h3>
@@ -118,7 +127,7 @@
 </select>
 
         <h3>รหัสไปรษณีย์ :</h3>
-  		<input type="text" name="postcode" v-model="postcode"><br>
+  		<input type="text" name="postcode" v-model="postcode"><br> -->
 
           <br>
     	<center>

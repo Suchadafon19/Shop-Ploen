@@ -8,8 +8,8 @@ export default new Vuex.Store({
     viewProductNo: 0,
     cart: [],
     cartCount: 0,
-    totalPrice: 0
-    
+    totalPrice: 0,
+    user: ''
   },
   mutations: {
     viewProductDetail(state, productNo){
@@ -32,7 +32,12 @@ export default new Vuex.Store({
     keepTotalPrice(state, total){
       state.totalPrice = total
       console.log('total'+total)
+    },
+    keepObjUser(state, objUser){
+      state.user = objUser
+      console.log(state.user.username)
     }
+    
   },
   actions: {
 

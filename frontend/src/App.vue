@@ -14,11 +14,12 @@
           <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><router-link to="/login"><span class="glyphicon glyphicon-log-in"></span>เข้าสู่ระบบ</router-link></li>
+          <li><span class="glyphicon glyphicon-log-in">{{$store.state.user.fName}} {{$store.state.user.lName}}</span> </li>
+          <li><router-link to="/login" ><span class="glyphicon glyphicon-log-in"></span><p @click="checkLogin($store.state.user)">{{check}}</p></router-link></li>
         </ul>
       </div>
     </nav>
-
+    
     <router-view/>
 
     <div id="foot">
@@ -119,6 +120,30 @@
 </div>   
   
 </template>
+<script>
+
+export default {
+  data () {
+    return {
+      check: 'เข้าสู่ระบบ'
+    }
+  },
+  methods: {
+    checkLogin(user) {
+      console.log('do thissssssssss')
+      console.log('user name'+user)
+     if(user != null){
+       this.check = 'ออกจากระบบ'
+     }else{
+       this.check = 'เข้าสู่ระบบ'
+     }
+    }
+  },
+  mounted () {
+   
+  }
+}
+</script>
 
 <style>
 @import url();

@@ -11,35 +11,93 @@
     <div class="main">
         <div class="form-w3agile">
           <h3>Login</h3>
-          <form action="#" method="post">
+          
             <div class="key">
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              <input  type="text" value="username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" required="">
+              <input  type="text" value="username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" required="" v-model="username">
               <div class="clearfix"></div>
             </div>
             <div class="key">
               <i class="fa fa-lock" aria-hidden="true"></i>
-              <input  type="password" value="Password" name="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+              <input  type="password" value="Password" name="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="" v-model="password">
               <div class="clearfix"></div>
             </div>
+            {{error}}
             <!--
             <input type="submit" value="Login">-->
             <div class="submit">
-            <p><button><a href="product.html">Login</a></button></p>
+              <div v-if="$store.state.cartCount == 0">
+              <router-link to="/">
+                <p><button @click="checkUsernameNPassword()">Login</button></p>
+              </router-link>
+              </div>
+              <div v-else-if="$store.state.cartCount > 0">
+                <router-link to="/addressField">
+                <p><button @click="checkUsernameNPassword()">Login</button></p>
+              </router-link>
+              </div>
+            
             </div>
             <div class="face">
               <img src="../assets/face.png" alt="">
               <a href="https://www.facebook.com/">Facebook</a>
             </div>
-          </form>
         </div>
-        
         <div class="clearfix"></div>
         </div>
       </div>
  </div>    
 
 </template>
+<script>
+import md5 from 'md5'
+import axios from 'axios'
+export default {
+  data () {
+    return {
+      custmer: '',
+      username: '',
+      password: '',
+      error: ''
+    }
+  },
+  methods: {
+    checkUsernameNPassword:async function () {
+      let passEncryt = md5(this.password)
+      let customers = await axios.get('http://localhost:5000/getAllUser')
+      this.customer = customers.data
+      console.log(this.customer)
+
+
+      for (let count = 0; count < this.customer.length; count++) { 
+        if(this.customer[count].username == this.username){
+          if(this.customer[count].password == passEncryt){
+            this.customer = this.customer[count]
+            this.keepObjectUser(this.customer);
+            break;
+
+          }
+          this.error = 'Username or password incorrect!'
+          console.log(this.error)
+          break;
+        }
+        if(count==this.customer.length-1){
+          this.error = 'Username or password incorrect!'
+          console.log(this.error)
+        }
+
+       }
+
+    },
+    keepObjectUser(user) {
+        this.$store.commit('keepObjUser', user);
+        console.log('KeepObjUser')
+        console.log(user)
+    }
+
+  }
+}
+</script>
 
   <style type="text/css">
     #foot{

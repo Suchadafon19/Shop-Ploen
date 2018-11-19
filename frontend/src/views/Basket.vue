@@ -52,9 +52,16 @@
   	<router-link to="/">
   		<button type="button" class="btn btn-primary btn-block" id="basket1" >เพิ่มสินค้า</button>
   	</router-link>
-  	<router-link to="/addressField">
+		<div v-if="$store.state.user.fName == null">
+  	<router-link to="/login">
   		<button type="button" class="btn btn-default btn-block" id="basket2">ยืนยันการสั่งซื้อ</button>
   	</router-link>
+		</div>
+		<div v-else-if="$store.state.user != null">
+			<router-link to="/addressField">
+  		<button type="button" class="btn btn-default btn-block" id="basket2">ยืนยันการสั่งซื้อ</button>
+  	</router-link>
+		</div>
   </center>
 </div>
 
