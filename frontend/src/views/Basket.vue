@@ -8,10 +8,10 @@
 
     			<thead>
       				<tr>
-      					<th></th>
-        				<th>สินค้า</th>
-        				<th>ราคา</th>
-        				<th>จำนวนสินค้าที่เลือก</th>
+      					
+        				<th>รายการสินค้าที่เพิ่มลงในตะกร้า</th>
+        				<th>ราคาสินค้าต่อชิ้น</th>
+        				<th>จำนวน</th>
         				<th>ราคารวม</th>
       				</tr>
     			</thead>
@@ -23,11 +23,7 @@
 						<tbody>
 					
       				<tr>
-      					<td class="column-1">
-							<div class="how-itemcart1">
-								<img src="" alt="">
-							</div>
-						</td>
+      					
         				<td>{{item.productName}}</td>
         				<td>{{item.price}} บาท</td>
         				<td>{{item.quantity}}</td>
@@ -102,6 +98,9 @@ h4,h5{
   padding: 10px;
   width: 500px;
   margin: 5px;
+}
+th,td{
+	width: 10%;
 }
   </style>
 
