@@ -5,8 +5,8 @@
 			<center>
 				<table style="width: 80%">
 			        <tr>
-			          	<td>
-							<img src="" style="width: 400px;height: 500px">
+			          	<td id="td1">
+							<img :src="product.productPic" style="width: 400px;height: 500px">
 			          	</td>
 			       		<td id="detail" style="padding: 30px">
 				       		<h1>{{product.productName}}</h1>
@@ -19,35 +19,8 @@
 
 				            <br>
 
-				            <h3>
-				              Size : 
-				              <select name="size">
-				                <option value="size">S</option>
-				                <option value="size">M</option>
-				                <option value="size">L</option>
-				                <option value="size">XL</option>
-				                <option value="size">XXL</option>
-				              </select>
-				            </h3>
-
-				            <br>
-
-				            <h3>
-				              color : 
-				              <select name="color">
-				                <option value="color">black</option>
-				                <option value="color">white</option>
-				                <option value="color">red</option>
-				                <option value="color">blue</option>
-				                <option value="color">green</option>
-				                <option value="color">brown</option>
-				                <option value="color">yellow</option>
-				                <option value="color">pink</option>
-				                <option value="color">violet</option>
-				                <option value="color">gray</option>
-				              </select>
-				            </h3>
-											<router-link to="/basket"><p @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</p></router-link>
+				            
+											<center><router-link to="/basket"><button type="button" id="addProduct" @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</button></router-link></center>
 				            <br>
 				        <center>    
 				            
@@ -99,12 +72,17 @@ export default {
 		background-color:rgba(141, 119, 83, 0.69);
 	}
 	#addProduct{
-	color: black;
+	background-color:rgba(141, 119, 83, 0.69);
+	color: rgb(44, 29, 19);
 	margin:10px;
 	border:1px;
 	border-radius:20px;
 	padding:10px;
 	border:solid;
 	}
-	
+	#td1{
+		padding: 20px;
+		padding-left: 110px;
+		background-color:lightgoldenrodyellow;
+	}
   </style>		
