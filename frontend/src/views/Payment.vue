@@ -1,49 +1,59 @@
 
 <template>
     <div class="payment">
-        <section>
+    <section>
 
- 	<h2 align="center">ชำระเงิน</h2>
+ 		<h2 align="center">ชำระเงิน</h2>
   
-		<h3>บัตรเครดิต</h3>
+		<div id="credit"><h3>บัตรเครดิต</h3></div>
 
-  		<div class="payment_detail">
+  		<div class="paymentDetail">
 
-    	<label><b>เลขบัตรเครดิต</b></label>
-    	<input type="text" placeholder="หมายเลขบัตรเครดิต" name="num" required="" id="pay_num"><br><br>
+    		<label><b>เลขบัตรเครดิต</b></label>
+    		<input type="text" placeholder="หมายเลขบัตรเครดิต" name="num" required="" id="pay_num"><br><br>
 
-    	<label><b>ชื่อเจ้าของบัตร</b></label>
-    	<input type="text" placeholder="ชื่อบนบัตร" name="name" required="" id="pay_name"><br><br>
+    		<label><b>ชื่อเจ้าของบัตร</b></label>
+    		<input type="text" placeholder="ชื่อบนบัตร" name="name" required="" id="pay_name"><br><br>
 
-    	<label><b>วันบัตรหมดอายุ</b></label>
-    	<input type="date" placeholder="วันหมดอายุ" name="date" required="" id="pay_date"><br><br>
+    		<label><b>วันบัตรหมดอายุ</b></label>
+    		<input type="date" placeholder="วันหมดอายุ" name="date" required="" id="pay_date"><br><br>
     	
-    	<label><b>CCV/CW</b></label>
-    	<input type="password" placeholder="CCV" name="ccv" required="" id="pay_ccv"><br><br>
+    		<label><b>CCV/CW</b></label>
+    		<input type="password" placeholder="CCV" name="ccv" required="" id="pay_ccv"><br><br>
+		</div>
+		<div id="total1">
+    		<label><b>จำนวนเงิน</b></label>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 
+				{{$store.state.totalPrice}}
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>บาท</b><br><br>
+		</div>
+		<div id="total2">
+    		<label><b>ค่าจัดส่ง</b></label>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				50
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>บาท</b><br><br>
+		</div>
+		<div id="total3">
+    		<label><b>รวม</b></label>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				{{priceNet}}
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>บาท</b><br><br>
+		</div>
+		<br>
 
-    	<label><b>จำนวนเงิน</b></label>&nbsp;{{$store.state.totalPrice}}&nbsp;บาท
-	
-    	<br><br>
+    		<center>
+               
+			    <router-link to="/addressField"><button class="button1" style="vertical-align:middle"><span>ย้อนกลับ </span></button></router-link> 
 
-    	<label><b>ค่าจัดส่ง</b></label>&nbsp;50&nbsp;บาท
-    	<br><br>
-
-    	<label><b>รวม</b></label>&nbsp;{{priceNet}}&nbsp;<b>บาท</b>
-    	<br><br>
-	
-	</div>
-    	<br>
-    	<center>
-
-                <router-link to="/addressField"><button class="button1" style="vertical-align:middle"><span>ย้อนกลับ </span></button></router-link>
-				
-
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     			<router-link to="/paymentSuccess"><button class="button2" style="vertical-align:middle" @click="insertOrder()"><span>ยืนยันการชำระเงิน </span></button></router-link>
 
-		</center><br>
-</section><br>
+			</center><br>
+	</section><br>
     </div>
 </template>
 
@@ -89,6 +99,46 @@ import axios from 'axios'
 </script>
 
 <style>
+body{
+  color: #000000;
+  margin: 0px;
+}
+
+section{
+  width: 1000px;
+  min-height: 400px;
+  overflow: auto;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #CCCCCC;
+  box-shadow: 4px 4px 4px 4px #BBBBBB;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.paymentDetail {
+  margin: 10px;
+  padding: 10px;
+  margin-left: 50px;
+}
+
+#credit{
+	margin-left: -550px;
+}
+
+#total1{
+	margin-left: -236px;
+}
+
+#total2{
+	margin-left: -237px;
+}
+
+#total3{
+	margin-left: -240px;
+}
+
 #pay_num {
 	width: 400px;
 	height: 30px;
@@ -99,6 +149,7 @@ import axios from 'axios'
 	margin-left:74px;
 	margin-top:0px;
 }
+
 #pay_name {
 	width: 400px;
 	height: 30px;
@@ -109,6 +160,7 @@ import axios from 'axios'
 	margin-left:73px;
 	margin-top:-30px;
 }
+
 #pay_date {
 	width: 400px;
 	height: 30px;
@@ -117,6 +169,7 @@ import axios from 'axios'
 	margin-left:69px;
 	margin-top:-60px;
 }
+
 #pay_ccv {
 	width: 400px;
 	height: 30px;
@@ -135,6 +188,7 @@ import axios from 'axios'
 	margin-top:-140px;
 	text-align: right;
 }
+
 #pay2{
 	width: 100px;
 	height: 30px;
@@ -170,6 +224,7 @@ import axios from 'axios'
   cursor: pointer;
   margin: 5px;
 }
+
 .button2 {
   display: inline-block;
   border-radius: 4px;
