@@ -40,7 +40,7 @@
 
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    			<router-link to="/paymentSuccess"><button class="button2" style="vertical-align:middle"><span>ยืนยันการชำระเงิน </span></button></router-link>
+    			<router-link to="/paymentSuccess"><button class="button2" style="vertical-align:middle" @click="insertOrder()"><span>ยืนยันการชำระเงิน </span></button></router-link>
 
 		</center><br>
 </section><br>
@@ -48,22 +48,43 @@
 </template>
 
 <script>
-	export default {
-    data () {
-        return {
-			
-			transportFee: 50,
-			priceNet: 0
-        }
-    },
-    methods: {
-		totalpricePlusTransportFee(){
-			this.priceNet = this.transportFee + this.$store.state.totalPrice
+import axios from 'axios'
+		export default {
+		data () {
+			return {
+				
+				transportFee: 50,
+				priceNet: 0
+			}
+		},
+		methods: {
+			totalpricePlusTransportFee(){
+				this.priceNet = this.transportFee + this.$store.state.totalPrice
+			},
+			insertOrder: function() {
+				var product = this.$store.state.cart
+				product.forEach(function(item) {
+					axios.post('http://localhost:5000/insertOrderDetail', {
+						quanlity: item.quantity,
+						price: item.price,
+						total: item.totalPrice,
+						productNo: item.productNo
+					})
+
+					console.log("product no: ",item.productNo);
+					console.log("quantity: ",item.quantity);
+					
+				});
+				axios.post('http://localhost:5000/insertOrderList', {
+					userNo: this.$store.state.user.userNo,
+					totalPrice: this.$store.state.totalPrice
+				})
+				
+				}
+		},
+		mounted () {
+			this.totalpricePlusTransportFee()
 		}
-	},
-    mounted () {
-        this.totalpricePlusTransportFee()
-    }
 	}
 </script>
 
