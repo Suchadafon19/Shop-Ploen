@@ -9,7 +9,8 @@ export default new Vuex.Store({
     cart: [],
     cartCount: 0,
     totalPrice: 0,
-    user: ''
+    user: '',
+    orderNo: 0
   },
   mutations: {
     viewProductDetail(state, productNo){
@@ -36,6 +37,9 @@ export default new Vuex.Store({
     keepObjUser(state, objUser){
       state.user = objUser
       console.log(state.user.username)
+    },
+    keepOrderNo(state, orderNo){
+      state.orderNo = orderNo
     }
     
   },

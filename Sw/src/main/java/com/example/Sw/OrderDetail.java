@@ -22,6 +22,8 @@ public class OrderDetail {
     private double total;
     @Column(name = "productNo")
     private long productNo;
+    @Column(name = "orderNo")
+    private long orderNo;
 
     public OrderDetail() {
     }
@@ -65,4 +67,12 @@ public class OrderDetail {
     public void setProductNo(long productNo) {
         this.productNo = productNo;
     }  
+
+    public long getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(long orderNo) {
+        this.orderNo = orderNo;
+    }
 }
