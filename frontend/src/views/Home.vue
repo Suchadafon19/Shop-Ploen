@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     getProduct: async function () {
-      let product = await axios.get('http://localhost:5000/getAllProduct')
+      let product = await axios.get('http://shopploenbackend.mybluemix.net/getAllProduct')
       this.product = product.data
       console.log(this.product)
     },

@@ -64,7 +64,7 @@ export default {
   methods: {
     checkUsernameNPassword:async function () {
       let passEncryt = md5(this.password)
-      let customers = await axios.get('http://localhost:5000/getAllUser')
+      let customers = await axios.get('http://shopploenbackend.mybluemix.net/getAllUser')
       this.customer = customers.data
       console.log(this.customer)
 

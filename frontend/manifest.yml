@@ -1,0 +1,6 @@
+applications:
+- path: dist/
+  instances: 1
+  name: Shop-Ploen
+  memory: 1024M
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
