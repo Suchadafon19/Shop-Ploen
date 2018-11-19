@@ -33,7 +33,7 @@
               </div>
               <div v-else-if="$store.state.cartCount > 0">
                 <router-link to="/addressField">
-                <p><button @click="checkUsernameNPassword()">Login</button></p>
+                <p><button id = "login" @click="checkUsernameNPassword()">Login</button></p>
               </router-link>
               </div>
             
@@ -213,7 +213,7 @@ export default {
     font-size: 1.15em;
     outline: none;
     height: 1.25cm;
-    width: 8cm;
+    width: 9.8cm;
     cursor: pointer;
     margin-bottom: 23px;
     }
@@ -225,7 +225,7 @@ export default {
     text-align: center;
     outline: none;
     height: 1.25cm;
-    width: 8cm;
+    width: 9.8cm;
     cursor: pointer;
     margin-bottom: 25px; 
     }
