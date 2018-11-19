@@ -1,12 +1,13 @@
 <template>
     <div class="productDetail">
-	<h1 style="padding: 30px">รายละเอียดสินค้า</h1>
-		<div class="container">
+	<div id="structure">
+	<h1 id = "product" style="padding: 30px">รายละเอียดสินค้า</h1>
+		<div style="padding: 10px" class="container">
 			<center>
 				<table style="width: 80%">
 			        <tr>
 			          	<td id="td1">
-							<img :src="product.productPic" style="width: 400px;height: 500px">
+							<img :src="product.productPic" style="width: 400px;height: 370px">
 			          	</td>
 			       		<td id="detail" style="padding: 30px">
 				       		<h1>{{product.productName}}</h1>
@@ -33,6 +34,8 @@
 			</center>
 		</div>
         </div>
+    </div>
+
 </template>
 
 <script>
@@ -62,6 +65,10 @@ export default {
 </script>
 
 <style type="text/css">
+	#structure{
+		width: 100%;
+		background-color:rgb(77, 67, 62);
+	}
   	#foot{
   		background-color: #212121;
   	}
@@ -69,10 +76,10 @@ export default {
   		color: white;
 	}
 	#detail{
-		background-color:rgba(141, 119, 83, 0.69);
+		background-color:bisque;
 	}
 	#addProduct{
-	background-color:rgba(141, 119, 83, 0.69);
+	background-color:tan;
 	color: rgb(44, 29, 19);
 	margin:10px;
 	border:1px;
@@ -83,6 +90,9 @@ export default {
 	#td1{
 		padding: 20px;
 		padding-left: 110px;
-		background-color:lightgoldenrodyellow;
+		background-color:tan;
+	}
+	#product{
+		color:floralwhite;
 	}
   </style>		
