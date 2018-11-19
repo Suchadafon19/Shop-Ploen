@@ -7,7 +7,7 @@
         <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" @click="viewProductDetail(item.productNo)"/></router-link>
         <h2 class='header'>{{ item.productName }}</h2>
         <p class='price'>{{item.price}} ฿</p>
-        <div class='btn'><p @click="addToCart(item)">add to cart</p></div>
+        <div class='btn'><p @click="addToCart(item)">เพิ่มสินค้าลงตะกร้า</p></div>
       </div>
     </div>
   </div>
