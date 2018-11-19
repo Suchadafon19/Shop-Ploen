@@ -155,7 +155,7 @@ export default {
 
     /*@media (max-width: 991px)*/
     .logins {
-      padding: 4em 0;
+      padding: 2em 0;
     }
 
     /*@media (max-width: 991px)*/
@@ -168,7 +168,7 @@ export default {
       margin: 0em auto;
       padding: 3em;
       background: white;
-      margin-top: 2em;
+      
       margin-bottom: 2em;
     }
 
