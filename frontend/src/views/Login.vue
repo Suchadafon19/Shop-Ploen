@@ -74,6 +74,7 @@ export default {
           if(this.customer[count].password == passEncryt){
             this.customer = this.customer[count]
             this.keepObjectUser(this.customer);
+            this.$store.commit('checkLogin');
             break;
 
           }
