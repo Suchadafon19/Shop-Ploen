@@ -4,10 +4,12 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div class='container' style="background-color: black; width:100%">
       <div class='product' style="height: 330px" v-for="item in product" :key="item.productNo">
-        <router-link to="/productDetail"><img src="" style="width: 118%; height: 63%" @click="viewProductDetail(item.productNo)"/></router-link>
+        <router-link to="/productDetail">
+          <img :src="item.productPic" alt="productPicture" style="width: 118%; height: 63%" @click="viewProductDetail(item.productNo)"/>
+        </router-link>
         <h2 class='header'>{{ item.productName }}</h2>
         <p class='price'>{{item.price}} ฿</p>
-        <div class='btn'><p @click="addToCart(item)">เพิ่มสินค้าลงตะกร้า</p></div>
+        <div class='btn'><p @click="addToCart(item)">add to cart</p></div>
       </div>
     </div>
   </div>
