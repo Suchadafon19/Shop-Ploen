@@ -14,8 +14,8 @@ public class OrderDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderDetailNo")
     private long orderDetailNo;
-    @Column(name = "quanlity")
-    private int quanlity;
+    @Column(name = "quantity")
+    private int quantity;
     @Column(name = "price")
     private double price;
     @Column(name = "total")
@@ -34,12 +34,12 @@ public class OrderDetail {
         this.orderDetailNo = orderDetailNo;
     }
 
-    public int getQuanlity() {
-        return quanlity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuanlity(int quanlity) {
-        this.quanlity = quanlity;
+    public void setQuantity(int quanlity) {
+        this.quantity = quanlity;
     }
 
     public double getPrice() {
