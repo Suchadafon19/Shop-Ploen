@@ -72,12 +72,12 @@ import axios from 'axios'
 				this.priceNet = this.transportFee + this.$store.state.totalPrice
 			},
 			insertOrder: async  function() {
-				let orderNo = await axios.get('http://localhost:5000/selectOrderNo')
+				let orderNo = await axios.get('http://shopploenbackend.mybluemix.net/selectOrderNo')
 				console.log('order no: '+orderNo.data)
 				this.keepOrderNo(orderNo.data)  
 				var product = this.$store.state.cart
 				product.forEach(function(item) {
-					axios.post('http://localhost:5000/insertOrderD', {
+					axios.post('http://shopploenbackend.mybluemix.net/insertOrderD', {
 						quanlity: item.quantity,
 						price: item.price,
 						total: item.totalPrice,
@@ -92,7 +92,7 @@ import axios from 'axios'
 
 				
 
-				axios.post('http://localhost:5000/insertOrderList', {
+				axios.post('http://shopploenbackend.mybluemix.net/insertOrderList', {
 					userNo: this.$store.state.user.userNo,
 					totalPrice: this.$store.state.totalPrice
 				})

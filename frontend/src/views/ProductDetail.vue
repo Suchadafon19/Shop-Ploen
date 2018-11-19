@@ -49,8 +49,8 @@ export default {
   methods: {
     getProduct: async function () {
 			console.log('no'+this.$store.state.viewProductNo)
-			console.log('product no url: '+'http://localhost:5000/'+this.$store.state.viewProductNo)
-      let product = await axios.get('http://localhost:5000/'+this.$store.state.viewProductNo)
+			console.log('product no url: '+'http://shopploenbackend.mybluemix.net/'+this.$store.state.viewProductNo)
+      let product = await axios.get('http://shopploenbackend.mybluemix.net/'+this.$store.state.viewProductNo)
       this.product = product.data
       console.log(this.product)
 		},

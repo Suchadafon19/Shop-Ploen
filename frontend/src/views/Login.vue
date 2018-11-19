@@ -64,7 +64,7 @@ export default {
   methods: {
     checkUsernameNPassword:async function () {
       let passEncryt = md5(this.password)
-      let customers = await axios.get('http://localhost:5000/getAllUser')
+      let customers = await axios.get('http://shopploenbackend.mybluemix.net/getAllUser')
       this.customer = customers.data
       console.log(this.customer)
 
@@ -155,7 +155,7 @@ export default {
 
     /*@media (max-width: 991px)*/
     .logins {
-      padding: 4em 0;
+      padding: 2em 0;
     }
 
     /*@media (max-width: 991px)*/
@@ -168,7 +168,7 @@ export default {
       margin: 0em auto;
       padding: 3em;
       background: white;
-      margin-top: 2em;
+      
       margin-bottom: 2em;
     }
 
