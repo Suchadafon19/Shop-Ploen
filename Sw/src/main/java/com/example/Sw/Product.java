@@ -23,6 +23,8 @@ public class Product implements Serializable {
     private int amount;
     @Column(name = "productDetail")
     private String productDetail;
+    @Column(name = "productPic")
+    private String productPic;
 
     public Product() {
         super();
@@ -66,5 +68,13 @@ public class Product implements Serializable {
 
     public void setProductDetail(String productDetail) {
         this.productDetail = productDetail;
+    }
+
+    public String getProductPic() {
+        return productPic;
+    }
+
+    public void setProductPic(String productPic) {
+        this.productPic = productPic;
     }
 }
