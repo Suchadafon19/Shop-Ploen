@@ -3,7 +3,7 @@
 	<!-- Login -->
 	  <div class="banner-top">
 	    <div class="containers">
-	      <h3 >Shoppearn</h3>
+	      <h3 >Shopploen</h3>
 	    </div>
 	  </div>
 
