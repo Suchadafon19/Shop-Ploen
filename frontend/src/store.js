@@ -9,7 +9,9 @@ export default new Vuex.Store({
     cart: [],
     cartCount: 0,
     totalPrice: 0,
-    user: ''
+    user: '',
+    orderNo: 0,
+    loginOrlogout: 'เข้าสู่ระบบ'
   },
   mutations: {
     viewProductDetail(state, productNo){
@@ -36,6 +38,16 @@ export default new Vuex.Store({
     keepObjUser(state, objUser){
       state.user = objUser
       console.log(state.user.username)
+    },
+    keepOrderNo(state, orderNo){
+      state.orderNo = orderNo
+    },
+    checkLogin(state) {
+     if(state.user != null){
+       state.loginOrlogout = 'ออกจากระบบ'
+     }else{
+        state.loginOrlogout = 'เข้าสู่ระบบ'
+     }
     }
     
   },

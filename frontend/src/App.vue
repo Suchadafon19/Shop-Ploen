@@ -15,7 +15,20 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><span class="glyphicon glyphicon-log-in">{{$store.state.user.fName}} {{$store.state.user.lName}}</span> </li>
-          <li><router-link to="/login" ><span class="glyphicon glyphicon-log-in"></span><p @click="checkLogin($store.state.user)">{{check}}</p></router-link></li>
+          
+
+            <div v-if="$store.state.loginOrlogout == 'เข้าสู่ระบบ'">
+            <router-link to="/login">
+              <li><span class="glyphicon glyphicon-log-in"></span><p>{{$store.state.loginOrlogout}}</p></li>
+            </router-link>
+            </div>
+            <div v-else-if="$store.state.loginOrlogout == 'ออกจากระบบ'">
+              <router-link to="/">
+               <li><span class="glyphicon glyphicon-log-in"></span><p @click="logout()">{{$store.state.loginOrlogout}}</p></li>
+
+            </router-link>
+            </div>
+
         </ul>
       </div>
     </nav>
@@ -33,25 +46,25 @@
 
           <ul>
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 สั่งซื้อสินค้าอย่างไร
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 ช่องทางการชำระเงิน
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 การจัดส่งสินค้า
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 การคืนเงินและคืนสินค้า
               </a>
             </li>
@@ -125,22 +138,18 @@
 export default {
   data () {
     return {
-      check: 'เข้าสู่ระบบ'
+
     }
   },
-  methods: {
-    checkLogin(user) {
-      console.log('do thissssssssss')
-      console.log('user name'+user)
-     if(user != null){
-       this.check = 'ออกจากระบบ'
-     }else{
-       this.check = 'เข้าสู่ระบบ'
-     }
+methods: {
+    logout() {
+        this.$store.state.user = ''
+        this.$store.state.cart = ''
+        this.$store.state.cartCount = 0
+        this.$store.state.totalPrice = 0
+        this.$store.state.loginOrlogout = 'เข้าสู่ระบบ'
+         
     }
-  },
-  mounted () {
-   
   }
 }
 </script>

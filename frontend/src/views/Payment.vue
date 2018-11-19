@@ -62,7 +62,7 @@ import axios from 'axios'
 		export default {
 		data () {
 			return {
-				
+			
 				transportFee: 50,
 				priceNet: 0
 			}
@@ -71,26 +71,36 @@ import axios from 'axios'
 			totalpricePlusTransportFee(){
 				this.priceNet = this.transportFee + this.$store.state.totalPrice
 			},
-			insertOrder: function() {
+			insertOrder: async  function() {
+				let orderNo = await axios.get('http://localhost:5000/selectOrderNo')
+				console.log('order no: '+orderNo.data)
+				this.keepOrderNo(orderNo.data)  
 				var product = this.$store.state.cart
 				product.forEach(function(item) {
-					axios.post('http://localhost:5000/insertOrderDetail', {
+					axios.post('http://localhost:5000/insertOrderD', {
 						quanlity: item.quantity,
 						price: item.price,
 						total: item.totalPrice,
-						productNo: item.productNo
+						productNo: item.productNo,
+						orderNo: orderNo.data
 					})
 
 					console.log("product no: ",item.productNo);
 					console.log("quantity: ",item.quantity);
 					
 				});
+
+				
+
 				axios.post('http://localhost:5000/insertOrderList', {
 					userNo: this.$store.state.user.userNo,
 					totalPrice: this.$store.state.totalPrice
 				})
 				
-				}
+			},
+   		 	keepOrderNo(orderNo) {
+				this.$store.commit('keepOrderNo', orderNo);
+    		}
 		},
 		mounted () {
 			this.totalpricePlusTransportFee()

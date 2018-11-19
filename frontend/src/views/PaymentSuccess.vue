@@ -2,7 +2,8 @@
     <div class="paymentSuccess">
         <section>
 		<br>
- 		<h2 align="center">ชำระเงินสำเร็จ</h2>
+ 		<h2 align="center">ชำระเงินสำเร็จ</h2><br>
+		 หมายเลขใบสั่งซื้อ : {{$store.state.orderNo}}
   		<br><br><br>
   		<h3 align="center">ขอบคุณที่ใช้บริการ Shoppearn</h3>
 

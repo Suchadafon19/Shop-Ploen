@@ -15,7 +15,7 @@ public class OrderDetailController {
     @Autowired
     private OrderDetailService orderDetailService;
 
-    @PostMapping("/insertOrderDetail")
+    @PostMapping("/insertOrderD")
     public ResponseEntity<OrderDetail> insertOrderDetail(@RequestBody HashMap<String,String> orderDetail){
         System.out.println("Product no. : "+orderDetail.get("productNo"));
         System.out.println("Price : "+orderDetail.get("price"));
@@ -32,6 +32,8 @@ public class OrderDetailController {
         orderD.setQuantity(quantity);
         double total = Double.parseDouble(orderDetail.get("total")+"");
         orderD.setTotal(total);
+        Long orderNo = Long.parseLong(orderDetail.get("orderNo"));
+        orderD.setOrderNo(orderNo);
         return new ResponseEntity<> (orderDetailService.insertOrderDetail(orderD),HttpStatus.OK);
     }
     

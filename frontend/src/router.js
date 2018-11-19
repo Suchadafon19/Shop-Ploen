@@ -8,6 +8,7 @@ import Payment from './views/Payment.vue'
 import PaymentSuccess from './views/PaymentSuccess.vue'
 import Login from './views/Login.vue'
 //import About from './views/about.vue'
+//import Help from './views/help.vue'
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/help',
+      name: 'help',
+      component: () => import(/* webpackChunkName: "about" */ './views/Help.vue')
     }
   ]
 })

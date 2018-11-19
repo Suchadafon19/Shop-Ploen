@@ -7,8 +7,11 @@ import org.springframework.stereotype.Service;
 public class OrderListService {
     @Autowired
     private OrderListRepository orderListRepository;
-  
     public OrderList insertOrderList(OrderList orderList){
         return orderListRepository.save(orderList);
+    }
+
+    public Long selectOrderNo(){
+        return orderListRepository.count()+1;
     }
 }
