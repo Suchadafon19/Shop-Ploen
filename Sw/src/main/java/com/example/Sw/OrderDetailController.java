@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*",allowCredentials = "true")
 public class OrderDetailController {
     @Autowired
     private OrderDetailService orderDetailService;
