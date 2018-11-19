@@ -31,11 +31,13 @@
     text-align: left;
     padding-bottom: 0.5cm;
     margin-left:2cm;
+    margin-right:1cm;
 	} 
 
   .abouts h4{
     padding-bottom: 1.5cm;
     margin-left:2cm;
+    margin-right:1cm;
   }
 
   .abouts h4 p{
