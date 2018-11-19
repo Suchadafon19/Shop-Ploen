@@ -33,25 +33,25 @@
 
           <ul>
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 สั่งซื้อสินค้าอย่างไร
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 ช่องทางการชำระเงิน
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 การจัดส่งสินค้า
               </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 การคืนเงินและคืนสินค้า
               </a>
             </li>
