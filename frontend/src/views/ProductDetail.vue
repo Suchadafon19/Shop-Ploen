@@ -6,7 +6,7 @@
 				<table style="width: 80%">
 			        <tr>
 			          	<td>
-							<img src="" style="width: 400px;height: 500px">
+							<img :src="product.productPic" style="width: 400px;height: 500px">
 			          	</td>
 			       		<td id="detail" style="padding: 30px">
 				       		<h1>{{product.productName}}</h1>
@@ -19,35 +19,8 @@
 
 				            <br>
 
-				            <h3>
-				              Size : 
-				              <select name="size">
-				                <option value="size">S</option>
-				                <option value="size">M</option>
-				                <option value="size">L</option>
-				                <option value="size">XL</option>
-				                <option value="size">XXL</option>
-				              </select>
-				            </h3>
-
-				            <br>
-
-				            <h3>
-				              color : 
-				              <select name="color">
-				                <option value="color">black</option>
-				                <option value="color">white</option>
-				                <option value="color">red</option>
-				                <option value="color">blue</option>
-				                <option value="color">green</option>
-				                <option value="color">brown</option>
-				                <option value="color">yellow</option>
-				                <option value="color">pink</option>
-				                <option value="color">violet</option>
-				                <option value="color">gray</option>
-				              </select>
-				            </h3>
-											<router-link to="/basket"><p @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</p></router-link>
+				            
+											<center><router-link to="/basket"><p @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</p></router-link></center>
 				            <br>
 				        <center>    
 				            
