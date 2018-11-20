@@ -97,9 +97,9 @@ import md5 from 'md5'
 				});
 
 				
-				let paymentNo = await axios.get('http://localhost:5000/selectPaymentNo')
+				let paymentNo = await axios.get('http://shopploenbackend.mybluemix.net/selectPaymentNo')
 				console.log('pay no'+paymentNo.data)
-				axios.post('http://localhost:5000/insertOrderList', {
+				axios.post('http://shopploenbackend.mybluemix.net/insertOrderList', {
 					userNo: this.$store.state.user.userNo,
 					totalPrice: this.$store.state.totalPrice,
 					paymentNo: paymentNo.data
@@ -114,7 +114,7 @@ import md5 from 'md5'
 				console.log('owner card name'+ this.ownerCardName)
 				console.log('expire: '+this.expireDate)
 
-				axios.post('http://localhost:5000/payment', {
+				axios.post('http://shopploenbackend.mybluemix.net/payment', {
 					ownerCardName: this.ownerCardName,
 					creditCardNo: md5(this.creditCardNo),
 					expireDate: this.expireDate,

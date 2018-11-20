@@ -42,27 +42,27 @@
 
           <ul>
             <li class="p-b-10">
-              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
+              <router-link to="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 สั่งซื้อสินค้าอย่างไร
-              </a>
+              </router-link>
             </li>
 
             <li class="p-b-10">
-              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
+              <router-link to="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 ช่องทางการชำระเงิน
-              </a>
+              </router-link>
             </li>
 
             <li class="p-b-10">
-              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
+              <router-link to="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 การจัดส่งสินค้า
-              </a>
+              </router-link>
             </li>
 
             <li class="p-b-10">
-              <a href="/help" class="stext-107 cl7 hov-cl1 trans-04">
+              <router-link to="/help" class="stext-107 cl7 hov-cl1 trans-04">
                 การคืนเงินและคืนสินค้า
-              </a>
+              </router-link>
             </li>
           </ul>
           </div>
@@ -73,21 +73,21 @@
 
           <ul>
             <li class="p-b-10">
-              <a href="/about" class="stext-107 cl7 hov-cl1 trans-04">
+              <router-link to="/about" class="stext-107 cl7 hov-cl1 trans-04">
                 ติดต่อเรา
-              </a>
+              </router-link>
             </li>
 
             <li class="p-b-10">
-              <a href="/about" class="stext-107 cl7 hov-cl1 trans-04">
+              <router-link to="/about" class="stext-107 cl7 hov-cl1 trans-04">
                 นโยบายของเรา 
-              </a>
+              </router-link>
             </li>
 
             <li class="p-b-10">
-              <a href="/about" class="stext-107 cl7 hov-cl1 trans-04">
+              <router-link to="/about" class="stext-107 cl7 hov-cl1 trans-04">
                 นโยบายความเป็นส่วนตัว
-              </a>
+              </router-link>
             </li>
 
             
