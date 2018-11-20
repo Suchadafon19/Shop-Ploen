@@ -51,7 +51,7 @@
 
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    			<router-link to="/paymentSuccess"><button class="button2" style="vertical-align:middle" @click="insertOrder()"><span>ยืนยันการชำระเงิน </span></button></router-link>
+    			<router-link to="/paymentSuccess"><button class="button2" style="vertical-align:middle" @click="insertPayment()"><span>ยืนยันการชำระเงิน </span></button></router-link>
 
 			</center><br>
 	</section><br>
@@ -65,7 +65,7 @@ import md5 from 'md5'
 		data () {
 			return {
 				ownerCardName: '',
-				creditCardNo: 0,
+				creditCardNo: '',
 				expireDate: '',
 				CCV: '',
 				transportFee: 50,
@@ -79,6 +79,7 @@ import md5 from 'md5'
 			insertOrder: async  function() {
 				let orderNo = await axios.get('http://shopploenbackend.mybluemix.net/selectOrderNo')
 				console.log('order no: '+orderNo.data)
+				
 				this.keepOrderNo(orderNo.data)  
 				var product = this.$store.state.cart
 				product.forEach(function(item) {
@@ -96,10 +97,12 @@ import md5 from 'md5'
 				});
 
 				
-
-				axios.post('http://shopploenbackend.mybluemix.net/insertOrderList', {
+				let paymentNo = await axios.get('http://localhost:5000/selectPaymentNo')
+				console.log('pay no'+paymentNo.data)
+				axios.post('http://localhost:5000/insertOrderList', {
 					userNo: this.$store.state.user.userNo,
-					totalPrice: this.$store.state.totalPrice
+					totalPrice: this.$store.state.totalPrice,
+					paymentNo: paymentNo.data
 				})
 				
 			},

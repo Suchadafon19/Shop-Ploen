@@ -23,6 +23,8 @@ public class OrderList {
     private Date date;
     @Column(name = "userNo")
     private Long userNo;
+    @Column(name = "paymentNo")
+    private Long paymentNo;
 
     public OrderList() {
     }
@@ -57,5 +59,13 @@ public class OrderList {
 
     public void setUserNo(Long userNo) {
         this.userNo = userNo;
+    }
+
+    public Long getPaymentNo(){
+        return paymentNo; 
+    }
+
+    public void setPaymentNo(Long paymentNo){
+        this.paymentNo = paymentNo;
     }
 }

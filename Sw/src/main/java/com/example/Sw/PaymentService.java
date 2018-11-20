@@ -11,5 +11,9 @@ public class PaymentService{
     public Payment insertPayment(Payment payment){
         return paymentRepository.save(payment);
     } 
+
+    public Long selectPaymentNo(){
+        return paymentRepository.count();
+    }
 }
 

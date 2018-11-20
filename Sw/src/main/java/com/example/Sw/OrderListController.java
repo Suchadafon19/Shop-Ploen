@@ -30,6 +30,13 @@ public class OrderListController {
         Long userNo = Long.parseLong(orderListHashMap.get("userNo")+"");
         orderList.setUserNo(userNo);
         System.out.println(userNo);
+        Long paymentNo = Long.parseLong(orderListHashMap.get("paymentNo"));
+        orderList.setPaymentNo(paymentNo);
+        System.out.println("--------------------------------------");
+        System.out.println("user no:"+userNo);
+        System.out.println("totalPrice: "+totalPrice);
+        System.out.println("pay no: "+paymentNo);
+        System.out.println("--------------------------------------");
         return new ResponseEntity<> (orderListService.insertOrderList(orderList),HttpStatus.OK);
     }
 
