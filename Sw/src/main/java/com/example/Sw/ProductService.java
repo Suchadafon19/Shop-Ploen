@@ -16,5 +16,10 @@ public class ProductService {
     } 
     public Optional<Product> getProductById(long id){
         return productRepository.findById(id);
-}
+    }
+    public Product decreaseProductAmount(Product product){
+        System.out.println("product No "+product.getProductNo());
+        System.out.println("product amount "+product.getAmount());
+        return productRepository.save(product);
+    }
 }

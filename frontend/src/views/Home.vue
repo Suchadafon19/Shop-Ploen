@@ -38,8 +38,25 @@ export default {
     viewProductDetail(productNo) {
       this.$store.commit('viewProductDetail', productNo);
     },
-    addToCart(item) {
+    addToCart: async function(item) {
+      console.log(item)
+      console.log(item.amount)
+      if(item.amount>0){
         this.$store.commit('addToCart', item);
+        item.amount = item.amount - 1
+        console.log('Product NO :'+item.productNo)
+        console.log('Amount :'+item.amount)
+        axios.put('http://localhost:5000/decreaseProductAmount', {
+          productNo: item.productNo,
+          amount: item.amount
+				}).then(function(response){
+        console.log('saved successfully')
+        console.log('Product NO :'+item.productNo)
+        console.log('Amount :'+item.amount)
+      });
+      }else if(item.amount<1){
+        alert('สินค้าหมด')
+      }
     }
   },
   mounted () {

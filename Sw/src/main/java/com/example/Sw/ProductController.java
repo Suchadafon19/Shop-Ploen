@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -24,5 +25,10 @@ public class ProductController {
     @GetMapping("/{product_no}")
     public ResponseEntity<Optional<Product>> getProductByID(@PathVariable("product_no") long productNo){
         return new ResponseEntity<> ((productService.getProductById(productNo)), HttpStatus.OK);
+    }
+    @PutMapping("/decreaseProductAmount")
+    public ResponseEntity<Product> decreaseProductAmount(Product product){
+        System.out.println("กำลังอยู่ใน product Controller");
+        return new ResponseEntity<> ((productService.decreaseProductAmount(product)), HttpStatus.OK);
     }
 }
