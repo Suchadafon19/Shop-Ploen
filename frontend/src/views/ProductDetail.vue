@@ -12,15 +12,12 @@
 			       		<td id="detail" style="padding: 30px">
 				       		<h1>{{product.productName}}</h1>
 				       		<hr>
-				            <h3>{{product.price}}</h3>
-				            <span>
-				            	{{product.productDetail}}
-				            </span>
-									
-
-				            <br>
-
-				            
+									 	<span>
+				            	<h4>{{product.productDetail}}</h4>
+				            </span><br><br>
+				            <h4>ราคา: {{product.price}} บาท</h4>
+										<h4>จำนวนคงเหลือ: {{product.amount}} ชิ้น</h4>
+				          	<br>
 											<center><router-link to="/basket"><button type="button" id="addProduct" @click="addToCart(product)">เพิ่มสินค้าลงตระกร้า</button></router-link></center>
 				            <br>
 				        <center>    
