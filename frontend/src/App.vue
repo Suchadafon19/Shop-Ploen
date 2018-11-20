@@ -6,29 +6,26 @@
       <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Shopploen</a>
+          <a class="navbar-brand" href="/home">Shopploen</a>
         </div>
+        
         <ul class="nav navbar-nav">
-          <li class="Home"><router-link to="/">Home</router-link> </li>
+          <li class="Home"><router-link to="/">หน้าหลัก</router-link> </li>
           <li><router-link to="/basket">ตะกร้าสินค้า ({{ $store.state.cartCount }})</router-link></li>
           <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><span class="glyphicon glyphicon-log-in">{{$store.state.user.fName}} {{$store.state.user.lName}}</span> </li>
           
+          <li class="nav navbar-nav navbar-right"><p id="name">{{$store.state.user.fName}} {{$store.state.user.lName}}</p> </li>
 
-            <div v-if="$store.state.loginOrlogout == 'เข้าสู่ระบบ'">
-            <router-link to="/login">
-              <li><span class="glyphicon glyphicon-log-in"></span><p>{{$store.state.loginOrlogout}}</p></li>
-            </router-link>
-            </div>
-            <div v-else-if="$store.state.loginOrlogout == 'ออกจากระบบ'">
-              <router-link to="/">
-               <li><span class="glyphicon glyphicon-log-in"></span><p @click="logout()">{{$store.state.loginOrlogout}}</p></li>
-
-            </router-link>
-            </div>
-
+          <li id = "login" v-if="$store.state.loginOrlogout == 'เข้าสู่ระบบ'">
+              <router-link to="/login">
+                <span class="glyphicon glyphicon-log-in"></span><p>{{$store.state.loginOrlogout}}</p>
+              </router-link>
+          </li>
+          <li id = "logout" v-else-if="$store.state.loginOrlogout == 'ออกจากระบบ'">
+                <router-link to="/">
+                  <span class="glyphicon glyphicon-log-in"></span><p @click="logout()">{{$store.state.loginOrlogout}}</p>
+                </router-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -180,6 +177,18 @@ methods: {
   background-color: #212121;
   text-align: left; 
 } 
-  
+
+#login{
+  padding-left: 750px;
+}
+#logout{
+  padding-left: 700px;
+}
+#nav navbar-nav{
+  color: white;
+}
+#name{
+  color: white;
+}
 
 </style>
