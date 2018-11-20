@@ -12,7 +12,6 @@
         <ul class="nav navbar-nav">
           <li class="Home"><router-link to="/">หน้าหลัก</router-link> </li>
           <li><router-link to="/basket">ตะกร้าสินค้า ({{ $store.state.cartCount }})</router-link></li>
-          <li class="pagenumber"><a class="pagenumber" data-toggle="pagenumber" href="address.html">จัดส่งสินค้า</a></li>
           
           <li class="nav navbar-nav navbar-right"><p id="name">{{$store.state.user.fName}} {{$store.state.user.lName}}</p> </li>
 
@@ -179,10 +178,10 @@ methods: {
 } 
 
 #login{
-  padding-left: 750px;
+  padding-left: 650px;
 }
 #logout{
-  padding-left: 700px;
+  padding-left: 600px;
 }
 #nav navbar-nav{
   color: white;
