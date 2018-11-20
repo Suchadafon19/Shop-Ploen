@@ -48,8 +48,14 @@ export default new Vuex.Store({
      }else{
         state.loginOrlogout = 'เข้าสู่ระบบ'
      }
-    }
-    
+    },
+    logout(state){
+      state.cart = []
+      state.cartCount = 0
+      state.totalPrice = 0
+      state.user = ''
+      state.loginOrlogout = 'เข้าสู่ระบบ'
+    } 
   },
   actions: {
 

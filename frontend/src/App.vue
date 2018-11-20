@@ -139,12 +139,7 @@ export default {
   },
 methods: {
     logout() {
-        this.$store.state.user = ''
-        this.$store.state.cart = ''
-        this.$store.state.cartCount = 0
-        this.$store.state.totalPrice = 0
-        this.$store.state.loginOrlogout = 'เข้าสู่ระบบ'
-         
+      this.$store.commit('logout');
     }
   }
 }
