@@ -10,16 +10,17 @@
   		<div class="paymentDetail">
 
     		<label><b>เลขบัตรเครดิต</b></label>
-    		<input type="text" placeholder="หมายเลขบัตรเครดิต" name="num" required="" id="pay_num"><br><br>
+    		<input type="text" placeholder="หมายเลขบัตรเครดิต" name="num" required="" id="pay_num" v-model="creditCardNo"><br><br>
 
     		<label><b>ชื่อเจ้าของบัตร</b></label>
-    		<input type="text" placeholder="ชื่อบนบัตร" name="name" required="" id="pay_name"><br><br>
+    		<input type="text" placeholder="ชื่อบนบัตร" name="name" required="" id="pay_name" v-model="ownerCardName"><br><br>
 
     		<label><b>วันบัตรหมดอายุ</b></label>
-    		<input type="date" placeholder="วันหมดอายุ" name="date" required="" id="pay_date"><br><br>
+    		<input type="text" placeholder="วันหมดอายุ" name="date" required="" id="pay_date" v-model="expireDate"><br><br>
     	
     		<label><b>CCV/CW</b></label>
-    		<input type="password" placeholder="CCV" name="ccv" required="" id="pay_ccv"><br><br>
+    		<input type="password" placeholder="CCV" name="ccv" required="" id="pay_ccv" v-model="CCV"><br><br>
+
 		</div>
 		<div id="total1">
     		<label><b>จำนวนเงิน</b></label>
@@ -59,10 +60,14 @@
 
 <script>
 import axios from 'axios'
+import md5 from 'md5'
 		export default {
 		data () {
 			return {
-			
+				ownerCardName: '',
+				creditCardNo: 0,
+				expireDate: '',
+				CCV: '',
 				transportFee: 50,
 				priceNet: 0
 			}
@@ -100,11 +105,27 @@ import axios from 'axios'
 			},
    		 	keepOrderNo(orderNo) {
 				this.$store.commit('keepOrderNo', orderNo);
-    		}
+    		},
+			insertPayment: async  function() {
+				console.log('credit card no encrpt: '+this.creditCardNo)
+				console.log('owner card name'+ this.ownerCardName)
+				console.log('expire: '+this.expireDate)
+
+				axios.post('http://localhost:5000/payment', {
+					ownerCardName: this.ownerCardName,
+					creditCardNo: md5(this.creditCardNo),
+					expireDate: this.expireDate,
+					CCV: md5(this.CCV),
+					totalPrice: this.$store.state.totalPrice
+				})
+				this.insertOrder();
+			}
 		},
 		mounted () {
 			this.totalpricePlusTransportFee()
+			
 		}
+		
 	}
 </script>
 
