@@ -8,8 +8,8 @@
           <img :src="item.productPic" alt="productPicture" style="width: 118%; height: 63%" @click="viewProductDetail(item.productNo)"/>
         </router-link>
         <h2 class='header'>{{ item.productName }}</h2>
-        <p class='price'>{{item.price}} ฿</p>
-        <div class='btn'><p @click="addToCart(item)">เพิ่มสินค้าลงตะกร้า</p></div>
+        <p class='price'>{{item.price}} บาท</p>
+        <div ><p class='btn' @click="addToCart(item)">เพิ่มสินค้าลงตะกร้า</p></div>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
     <div class="logins">
     <div class="main">
         <div class="form-w3agile">
-          <h3>Login</h3>
+          <h3>เข้าสู่ระบบ</h3>
           
             <div class="key">
               <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -25,15 +25,18 @@
             {{error}}
             <!--
             <input type="submit" value="Login">-->
-            <div class="submit">
+            
+            <br>
+
+            <div class="submit" >
               <div v-if="$store.state.cartCount == 0">
               <router-link to="/">
-                <p><button @click="checkUsernameNPassword()">Login</button></p>
+                <p><button @click="checkUsernameNPassword()">เข้าสู่ระบบ</button></p>
               </router-link>
               </div>
               <div v-else-if="$store.state.cartCount > 0">
                 <router-link to="/addressField">
-                <p><button id = "login" @click="checkUsernameNPassword()">Login</button></p>
+                <p><button @click="checkUsernameNPassword()">เข้าสู่ระบบ</button></p>
               </router-link>
               </div>
             
@@ -240,5 +243,6 @@ export default {
     font-size: 1.15em;
     outline: none;
     }
+
 
 </style>
