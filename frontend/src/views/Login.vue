@@ -11,15 +11,16 @@
     <div class="main">
         <div class="form-w3agile">
           <h3>เข้าสู่ระบบ</h3>
-          
+            <div id="use"><label>ชื่อบัญชีผู้ใช้</label></div>
             <div class="key">
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              <input  type="text" value="username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" required="" v-model="username">
+              <input  type="text" value="username" name="username" placeholder="ชื่อผู้ใช้งาน" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'username';}" required="" v-model="username">
               <div class="clearfix"></div>
             </div>
+            <div id="pass"><label>รหัสผ่าน</label></div>
             <div class="key">
               <i class="fa fa-lock" aria-hidden="true"></i>
-              <input  type="password" value="Password" name="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="" v-model="password">
+              <input  type="password" value="Password" name="Password" placeholder="รหัสผ่าน" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="" v-model="password">
               <div class="clearfix"></div>
             </div>
             {{error}}
@@ -43,7 +44,7 @@
             </div>
             <div class="face">
               <img src="../assets/face.png" alt="">
-              <a href="https://www.facebook.com/">Facebook</a>
+              <a href="https://www.facebook.com/"> Facebook</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -119,7 +120,7 @@ export default {
       box-sizing: border-box;
     }
 
-    .banner-top {
+    /* .banner-top {
         text-align: all;
         width: 100%;
         height: 114px;
@@ -127,7 +128,7 @@ export default {
         background: white;
         padding: 3em 0;
         background-size: cover;
-    }
+    } */
 
     .banner-top h3 {
         font-size: 2.5em;
@@ -159,11 +160,12 @@ export default {
     /*@media (max-width: 991px)*/
     .logins {
       padding: 2em 0;
+      
     }
 
     /*@media (max-width: 991px)*/
     .main{
-    width: 65%;
+      width: 65%;
     }
 
     .main {
@@ -179,7 +181,7 @@ export default {
     color: black;
     font-size: 2.5em;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1em; 
     }
 
     .key {
@@ -196,7 +198,8 @@ export default {
     }
 
     .key input[type="text"], .key input[type="password"] {
-    width: 89%;
+    width: 90%;
+    height: 40px;
     padding: 10px 10px;
     font-size: 1em;
     border: none;
@@ -216,22 +219,21 @@ export default {
     font-size: 1.15em;
     outline: none;
     height: 1.25cm;
-    width: 9.8cm;
+    width: 8.5cm;
     cursor: pointer;
     margin-bottom: 23px;
     }
     
     .face{
     background: #192152 ;
-     text-align: center;
     padding: 10px 10px;
     border: none;
-    font-size: 1.15em;
+    text-align: center;
     outline: none;
     height: 1.25cm;
-    width: 9.8cm;
+    width: 8.5cm;
     cursor: pointer;
-    margin-bottom: 23px; 
+    margin-bottom: 25px; 
     }
 
     .face img{
@@ -245,5 +247,7 @@ export default {
     outline: none;
     }
 
-
+    #use, #pass{
+      text-align: left;
+    }
 </style>

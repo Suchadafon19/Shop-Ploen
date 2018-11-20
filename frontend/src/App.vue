@@ -178,10 +178,10 @@ methods: {
 } 
 
 #login{
-  padding-left: 650px;
+  padding-left: 750px;
 }
 #logout{
-  padding-left: 600px;
+  padding-left: 700px;
 }
 #nav navbar-nav{
   color: white;
