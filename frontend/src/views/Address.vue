@@ -136,10 +136,10 @@
 
           <br>
     	<center>
-    		<a href="basket.html">
+			<router-link to="/basket">
 				
 				<button class="button1" style="vertical-align:middle"><span>ยกเลิก </span></button>
-			</a>
+			</router-link>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	
 				<router-link to="/payment"><button class="button2" style="vertical-align:middle"><span>ยืนยันที่อยู่ </span></button></router-link>	

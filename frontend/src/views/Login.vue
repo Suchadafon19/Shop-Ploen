@@ -223,15 +223,14 @@ export default {
     
     .face{
     background: #192152 ;
-     text-align: center;
     padding: 10px 10px;
     border: none;
-    font-size: 1.15em;
+    text-align: center;
     outline: none;
     height: 1.25cm;
     width: 9.8cm;
     cursor: pointer;
-    margin-bottom: 23px; 
+    margin-bottom: 25px; 
     }
 
     .face img{
